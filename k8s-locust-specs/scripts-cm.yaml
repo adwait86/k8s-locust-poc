@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-locust
+data:
+  master-config: |
+   host=https://gorest.co.in/public/v1/users
+   users=1
+   spawn-rate=1
+   web-port=28401
+   master=true
+   expect-workers=2
+   run-time=10s
+
+  worker-config: |
+   worker=true
+   master-host=locust-master
